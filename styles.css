@@ -1,4 +1,13 @@
 body{
     background-color: blue;
-    width: 100%;
 }
+
+div{
+    background-color: purple;
+}
+
+#container{
+    background-color: pink;
+    width: 960px;
+}
+
