@@ -2,12 +2,16 @@ body{
     background-color: blue;
 }
 
-div{
-    background-color: purple;
-}
 
 #container{
-    background-color: pink;
     width: 960px;
+    height: 960px;
+    display: grid;
 }
+
+.grid-item{
+    background-color: white;
+    border: 1px solid black;
+}
+
 

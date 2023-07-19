@@ -1,11 +1,13 @@
 const container = document.querySelector('#container');
 
 function createGrid(num){
-    const numOfSquares = num * (num + 1) * (2 * num + 1) / 6;
-
+    const numOfSquares = num * num;
     for(let i = 0; i <= numOfSquares; i++){
-
-        container.append(document.createElement('div'));
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item')
+        container.append(gridItem);
+        container.style.gridTemplateRows = `repeat(${num}, 1fr)`;
+        container.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
     }
     
 }
