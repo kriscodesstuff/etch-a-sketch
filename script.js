@@ -34,7 +34,7 @@ function resetGrid(){
 
 function getGridNum(){
     resetGrid();
-    const num = prompt('Choose your grid number');
+    const num = prompt("Choose your grid number(e.g.,'2' = 2 x 2 grid)");
     if(num > 1 && num <= 100){
         createGrid(num);
     }else{
@@ -44,3 +44,6 @@ function getGridNum(){
 }
 
 button.addEventListener('click', getGridNum);
+
+
+
