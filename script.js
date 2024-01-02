@@ -4,9 +4,32 @@ const chooseBtn = document.querySelector('#choose-btn');
 const clearBtn = document.querySelector('#clear-btn');
 const eraserBtn = document.querySelector('#eraser-btn');
 
-function addClickClass(e){
-    e.target.classList.add('clicked');
+
+
+function drawOrErase(e){
+
+    const currButton = e.currentTarget.id;
+    const gridItem = document.querySelectorAll('.grid-item');
+
+    if(currButton == 'pencil-btn'){
+    pencilBtn.classList.add('active-btn');
+    eraserBtn.classList.remove('active-btn');
+
+    gridItem.forEach((item) => {
+        item.addEventListener('click', () => item.classList.add('clicked'));
+    })
+    }else if(currButton == 'eraser-btn'){
+        pencilBtn.classList.remove('active-btn');
+        eraserBtn.classList.add('active-btn');
+        gridItem.forEach((item) => {
+            item.addEventListener(('click'), () => item.classList.remove('clicked'));
+        })
+    }
+    
+    
 }
+
+
 
 function createGrid(num){
     const numOfSquares = num * num;
@@ -18,12 +41,14 @@ function createGrid(num){
         gridContainer.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
     }
 
-    const gridItem = document.querySelectorAll('.grid-item');
+    // const gridItem = document.querySelectorAll('.grid-item');
 
-    gridItem.forEach((item) => {
-    item.addEventListener('click', addClickClass);
-})
-    
+    // pencilBtn.classList.add('active-btn');
+    // eraserBtn.classList.remove('active-btn');
+
+    // gridItem.forEach((item) => {
+    //     item.addEventListener('click', addClickClass);
+    // })
 }
 
 createGrid(16);
@@ -53,23 +78,17 @@ function clearGrid(){
     })
 }
 
-function eraseGridItem(){
-    pencilBtn.classList.remove('active-btn');
-    eraserBtn.classList.add('active-btn');
-    const gridItem = document.querySelectorAll('.grid-item');
-    gridItem.forEach((item) => {
-        item.addEventListener(('click'), () => item.classList.remove('clicked'));
-    })
-}
+
+
 
 
 clearBtn.addEventListener('click', clearGrid);
 
 chooseBtn.addEventListener('click', getGridNum);
 
-eraserBtn.addEventListener('click', eraseGridItem);
+eraserBtn.addEventListener('click', drawOrErase);
 
-
+pencilBtn.addEventListener('click', drawOrErase);
 
 // i need to add a pencil button
 // create active button class 
