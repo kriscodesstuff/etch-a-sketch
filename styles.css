@@ -20,7 +20,11 @@ body{
     border: 1px solid black;
 }
 
-.hovered{
+.grid-item:hover{
+    cursor: pointer;
+}
+
+.clicked{
     background-color: black;
 }
 

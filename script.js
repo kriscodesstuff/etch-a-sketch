@@ -2,8 +2,8 @@ const gridContainer = document.querySelector('#grid-container');
 const chooseBtn = document.querySelector('#choose-btn');
 const clearBtn = document.querySelector('#clear-btn');
 
-function addHoverClass(e){
-    e.target.classList.add('hovered');
+function addClickClass(e){
+    e.target.classList.add('clicked');
 }
 
 function createGrid(num){
@@ -19,7 +19,7 @@ function createGrid(num){
     const gridItem = document.querySelectorAll('.grid-item');
 
     gridItem.forEach((item) => {
-    item.addEventListener('mouseover', addHoverClass);
+    item.addEventListener('click', addClickClass);
 })
     
 }
