@@ -1,6 +1,7 @@
 const gridContainer = document.querySelector('#grid-container');
 const chooseBtn = document.querySelector('#choose-btn');
 const clearBtn = document.querySelector('#clear-btn');
+const eraserBtn = document.querySelector('#eraser-btn');
 
 function addClickClass(e){
     e.target.classList.add('clicked');
@@ -47,7 +48,14 @@ function getGridNum(){
 function clearGrid(){
     const gridItem = document.querySelectorAll('.grid-item');
     gridItem.forEach((item) => {
-        item.classList.remove('hovered');
+        item.classList.remove('clicked');
+    })
+}
+
+function eraseGridItem(){
+    const gridItem = document.querySelectorAll('.grid-item');
+    gridItem.forEach((item) => {
+        item.addEventListener(('click'), () => item.classList.remove('clicked'));
     })
 }
 
@@ -55,6 +63,8 @@ function clearGrid(){
 clearBtn.addEventListener('click', clearGrid);
 
 chooseBtn.addEventListener('click', getGridNum);
+
+eraserBtn.addEventListener('click', eraseGridItem);
 
 
 
