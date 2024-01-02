@@ -1,4 +1,5 @@
 const gridContainer = document.querySelector('#grid-container');
+const pencilBtn = document.querySelector('#pencil-btn');
 const chooseBtn = document.querySelector('#choose-btn');
 const clearBtn = document.querySelector('#clear-btn');
 const eraserBtn = document.querySelector('#eraser-btn');
@@ -68,3 +69,12 @@ eraserBtn.addEventListener('click', eraseGridItem);
 
 
 
+// i need to add a pencil button
+// create active button class 
+// the active button class will be highlighted
+// by default the active button class will be assigned to the pencil button
+// when the eraser button gets clicked the 
+//active class will be removed from the pencil button and 
+//assigned to the eraser button
+// when the pencil button gets clicked the active class will be assigned to the 
+// pencil button and removed from the eraser button
