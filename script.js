@@ -54,6 +54,8 @@ function clearGrid(){
 }
 
 function eraseGridItem(){
+    pencilBtn.classList.remove('active-btn');
+    eraserBtn.classList.add('active-btn');
     const gridItem = document.querySelectorAll('.grid-item');
     gridItem.forEach((item) => {
         item.addEventListener(('click'), () => item.classList.remove('clicked'));
