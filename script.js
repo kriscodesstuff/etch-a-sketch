@@ -1,5 +1,6 @@
 const gridContainer = document.querySelector('#grid-container');
-const button = document.querySelector('button');
+const chooseBtn = document.querySelector('#choose-btn');
+const clearBtn = document.querySelector('#clear-btn');
 
 function addHoverClass(e){
     e.target.classList.add('hovered');
@@ -43,7 +44,17 @@ function getGridNum(){
     }
 }
 
-button.addEventListener('click', getGridNum);
+function clearGrid(){
+    const gridItem = document.querySelectorAll('.grid-item');
+    gridItem.forEach((item) => {
+        item.classList.remove('hovered');
+    })
+}
+
+
+clearBtn.addEventListener('click', clearGrid);
+
+chooseBtn.addEventListener('click', getGridNum);
 
 
 
