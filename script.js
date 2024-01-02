@@ -8,7 +8,7 @@ const eraserBtn = document.querySelector('#eraser-btn');
 
 function drawOrErase(e){
 
-    const currButton = e.currentTarget.id;
+    const currButton = e ? e.currentTarget.id : 'pencil-btn';
     const gridItem = document.querySelectorAll('.grid-item');
 
     if(currButton == 'pencil-btn'){
@@ -40,6 +40,8 @@ function createGrid(num){
         gridContainer.style.gridTemplateRows = `repeat(${num}, 1fr)`;
         gridContainer.style.gridTemplateColumns = `repeat(${num}, 1fr)`;
     }
+
+    drawOrErase();
 
     // const gridItem = document.querySelectorAll('.grid-item');
 
