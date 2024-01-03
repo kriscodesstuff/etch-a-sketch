@@ -42,15 +42,6 @@ function createGrid(num){
     }
 
     drawOrErase();
-
-    // const gridItem = document.querySelectorAll('.grid-item');
-
-    // pencilBtn.classList.add('active-btn');
-    // eraserBtn.classList.remove('active-btn');
-
-    // gridItem.forEach((item) => {
-    //     item.addEventListener('click', addClickClass);
-    // })
 }
 
 createGrid(16);
@@ -92,12 +83,3 @@ eraserBtn.addEventListener('click', drawOrErase);
 
 pencilBtn.addEventListener('click', drawOrErase);
 
-// i need to add a pencil button
-// create active button class 
-// the active button class will be highlighted
-// by default the active button class will be assigned to the pencil button
-// when the eraser button gets clicked the 
-//active class will be removed from the pencil button and 
-//assigned to the eraser button
-// when the pencil button gets clicked the active class will be assigned to the 
-// pencil button and removed from the eraser button
